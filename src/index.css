@@ -98,6 +98,31 @@ body {
   align-items: center;
   padding: 20px 0 50px;
 }
+.current-weather .weather-icon{
+  width: 140px;
+  aspect-ratio:1;
+}
+
+.current-weather .temperature{
+  margin: 18px 0;
+  display: flex;
+  font-size: 3.38rem;
+}
+
+.current-weather .temperature span{
+  font-size: 1.56rem;
+  font-weight: 400;
+  margin: 5px 0 0 2px;
+}
+
+.current-weather .description{
+  font-size: 1.25rem;
+}
+
+.hourly-forecast{
+  padding: 16px 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
 .container{
   margin: 0 auto;
   max-width: 410px;
@@ -107,6 +132,9 @@ body {
 }
 .hourly-forecast .weather-list{
   display: flex;
+  list-style: none;
+  gap: 34px;
+  overflow-x: auto;
 }
 .hourly-forecast .weather-item .weather-icon{
   width: 20px;
