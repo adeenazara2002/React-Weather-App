@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="container">
       <div className="search-section">
-        <form action="#" className="searcch-form">
+        <form action="#" className="search-form">
           <span class="material-symbols-rounded">search</span>
           <input
             type="search"
@@ -35,41 +35,31 @@ function App() {
               <img src="icons/clouds.svg" alt="" className="weather-icon"></img>
               <p className="temperature">20°</p>
             </li>
-          </ul>
-
-          <ul className="weather-list">
+          
             <li className="weather-item">
               <p className="time">00:00</p>
               <img src="icons/clouds.svg" alt="" className="weather-icon"></img>
               <p className="temperature">20°</p>
             </li>
-          </ul>
 
-          <ul className="weather-list">
             <li className="weather-item">
               <p className="time">00:00</p>
               <img src="icons/clouds.svg" alt="" className="weather-icon"></img>
               <p className="temperature">20°</p>
             </li>
-          </ul>
 
-          <ul className="weather-list">
             <li className="weather-item">
               <p className="time">00:00</p>
               <img src="icons/clouds.svg" alt="" className="weather-icon"></img>
               <p className="temperature">20°</p>
             </li>
-          </ul>
 
-          <ul className="weather-list">
             <li className="weather-item">
               <p className="time">00:00</p>
               <img src="icons/clouds.svg" alt="" className="weather-icon"></img>
               <p className="temperature">20°</p>
             </li>
-          </ul>
 
-          <ul className="weather-list">
             <li className="weather-item">
               <p className="time">00:00</p>
               <img src="icons/clouds.svg" alt="" className="weather-icon"></img>
@@ -78,7 +68,8 @@ function App() {
           </ul>
         </div>
       </div>
-    </div>
+      </div>
+  
   );
 }
 
