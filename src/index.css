@@ -16,31 +16,31 @@ body {
   background: linear-gradient(#f5eeff, #dac3f8);
 }
 
-#root{
+#root {
   width: 100%;
 }
 
-.search-section{
+.search-section {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 25px;
 }
 
-.search-section .search-form{
+.search-section .search-form {
   height: 54px;
   width: 100%;
   position: relative;
 }
 
-.search-section .search-form span{
+.search-section .search-form span {
   color: #fff;
   position: absolute;
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
 }
-.search-section .search-input{
+.search-section .search-input {
   width: 100%;
   height: 100%;
   outline: none;
@@ -54,16 +54,16 @@ body {
   transition: 0.1s ease;
 }
 
-.search-section .search-input:focus{
+.search-section .search-input:focus {
   border-color: #a38cd9;
 }
 
-.search-section .search-input::placeholder{
+.search-section .search-input::placeholder {
   color: #ddd;
-  text-transform:none;
+  text-transform: none;
 }
 
-.search-section .location-button{
+.search-section .location-button {
   height: 54px;
   width: 56px;
   display: flex;
@@ -78,76 +78,78 @@ body {
   transition: 0.2s ease;
 }
 
-.search-section .location-button span{
+.search-section .location-button span {
   font-size: 1.3rem;
-
 }
 
-.search-section .location-button:hover{
+.search-section .location-button:hover {
   color: #b39fdf;
   border-color: #a38cd9;
 }
 
-.weather-section :where(h2, p){
+.weather-section :where(h2, p) {
   color: #fff;
 }
 
-.weather-section .current-weather{
+.weather-section .current-weather {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0 50px;
 }
-.current-weather .weather-icon{
+.current-weather .weather-icon {
   width: 140px;
-  aspect-ratio:1;
+  aspect-ratio: 1;
 }
 
-.current-weather .temperature{
+.current-weather .temperature {
   margin: 18px 0;
   display: flex;
   font-size: 3.38rem;
 }
 
-.current-weather .temperature span{
+.current-weather .temperature span {
   font-size: 1.56rem;
   font-weight: 400;
   margin: 5px 0 0 2px;
 }
 
-.current-weather .description{
+.current-weather .description {
   font-size: 1.25rem;
 }
 
-.hourly-forecast{
+.hourly-forecast {
   padding: 16px 25px;
   border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.hourly-forecast{
+.hourly-forecast {
   padding: 16px 25px;
   border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
-.container{
+.container {
   position: relative;
   overflow: hidden;
   margin: 0 auto;
+  z-index: 1;
   max-width: 410px;
   border-radius: 10px;
-  background: linear-gradient(#352163, #33143C);
+  background: linear-gradient(#352163, #33143c);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }
 
-.container::after{
+.container::after {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
+  z-index: -1;
+  opacity: 0.7;
   width: 100%;
   height: 100%;
   background: url("/public/icons/clouds.png");
 }
-.hourly-forecast .weather-list{
+.hourly-forecast .weather-list {
   display: flex;
   list-style: none;
   gap: 32px;
@@ -158,17 +160,17 @@ body {
   scrollbar-color: transparent transparent;
 }
 
-.hourly-forecast:hover .weather-list{
+.hourly-forecast:hover .weather-list {
   scrollbar-color: #c5bcdb transparent;
 }
 
-.hourly-forecast .weather-item{
+.hourly-forecast .weather-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 7px;
 }
-.hourly-forecast .weather-item .weather-icon{
+.hourly-forecast .weather-item .weather-icon {
   width: 20px;
   aspect-ratio: 1;
 }

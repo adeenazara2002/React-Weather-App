@@ -1,24 +1,12 @@
 import "./App.css";
+import SearchSection from "./components/SearchSection";
 
 function App() {
   return (
     <div className="container">
-      <div className="search-section">
-        <form action="#" className="search-form">
-          <span class="material-symbols-rounded">search</span>
-          <input
-            type="search"
-            placeholder="Enter a city name"
-            className="search-input"
-            required
-          ></input>
-        </form>
-        <button className="location-button">
-          <span className="material-symbols-rounded">location_on</span>
-        </button>
-      </div>
-
-      {/* search section */}
+      {/* search Section */}
+      <SearchSection />
+      {/* Weather section */}
       <div className="weather-section">
         <div className="current-weather">
           <img src="icons/clouds.svg" alt="" className="weather-icon"></img>
@@ -35,7 +23,7 @@ function App() {
               <img src="icons/clouds.svg" alt="" className="weather-icon"></img>
               <p className="temperature">20°</p>
             </li>
-          
+
             <li className="weather-item">
               <p className="time">00:00</p>
               <img src="icons/clouds.svg" alt="" className="weather-icon"></img>
@@ -68,8 +56,7 @@ function App() {
           </ul>
         </div>
       </div>
-      </div>
-  
+    </div>
   );
 }
 
