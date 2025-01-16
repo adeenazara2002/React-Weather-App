@@ -5,8 +5,10 @@ import HourlyWeatherItem from "./components/HourlyWeatherItem";
 import SearchSection from "./components/SearchSection";
 import { weatherCodes } from "./constants";
 
-function App() {
+const App = () => {
   const [currentWeather, setCurrentWeather] = useState({});
+  const [hourlyForecasts, setHourlyForecasts] = useState([]);
+
 
   const filterHourlyForecast = (hourlyData) => {
     const currentHour = new Date().setMinutes(0, 0, 0);
@@ -15,7 +17,7 @@ function App() {
       const forecastTime = new Date(time).getTime();
       return forecastTime >= currentHour && forecastTime <= next24Hours;
     });
-    console.log(next24HoursData);
+    setHourlyForecasts(next24HoursData);
   };
   // fetches weather details
   const getWeatherDetails = async (API_URL) => {
@@ -52,7 +54,10 @@ function App() {
         {/* Hourly weather forecast list */}
         <div className="hourly-forecast">
           <ul className="weather-list">
-            <HourlyWeatherItem />
+            {hourlyForecasts.map((hourlyWeather) => (
+              <HourlyWeatherItem key={hourlyWeather.time_epoch} hourlyWeather={hourlyWeather}/>
+               
+            ))}
           </ul>
         </div>
       </div>
