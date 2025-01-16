@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRef } from "react";
+
 import "./App.css";
 import CurrentWeather from "./components/CurrentWeather";
 import HourlyWeatherItem from "./components/HourlyWeatherItem";
 import SearchSection from "./components/SearchSection";
+import NoResultsDiv from "./components/NoResultsDiv";
 import { weatherCodes } from "./constants";
 
 const App = () => {
   const [currentWeather, setCurrentWeather] = useState({});
   const [hourlyForecasts, setHourlyForecasts] = useState([]);
+  const [hasNoResults, setHasNoResults] = useState(false);
+  const searchInputRef = useRef(null);
 
 
   const filterHourlyForecast = (hourlyData) => {
@@ -21,8 +26,12 @@ const App = () => {
   };
   // fetches weather details
   const getWeatherDetails = async (API_URL) => {
+    setHasNoResults(false);
+    window.innerWidth <= 768 && searchInputRef.current.focus();
+    
     try {
       const response = await fetch(API_URL);
+      if (!response.ok) throw new Error();
       const data = await response.json();
 
       const temperature = Math.floor(data.current.temp_c);
@@ -37,18 +46,24 @@ const App = () => {
         ...data.forecast.forecastday[0].hour,
         ...data.forecast.forecastday[1].hour,
       ];
+      searchInputRef.current.value = data.location.name;
       filterHourlyForecast(combinedHourlyData);
-    } catch (error) {
-      console.log(error);
+    } catch{
+      setHasNoResults(true);
     }
   };
+  useEffect(() => {
+
+  }, []);
   return (
     <div className="container">
       {/* search Section */}
-      <SearchSection getWeatherDetails={getWeatherDetails} />
+      <SearchSection getWeatherDetails={getWeatherDetails} searchInputRef={searchInputRef}/>
 
-      {/* Weather section */}
-      <div className="weather-section">
+      {hasNoResults ? (
+        <NoResultsDiv />
+      ) : (
+        <div className="weather-section">
         <CurrentWeather currentWeather={currentWeather} />
 
         {/* Hourly weather forecast list */}
@@ -61,6 +76,11 @@ const App = () => {
           </ul>
         </div>
       </div>
+      )
+    }
+
+      {/* Weather section */}
+      
     </div>
   );
 }
