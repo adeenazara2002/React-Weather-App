@@ -13,7 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(#f5eeff, #dac3f8);
+  background: linear-gradient(#e0f7fa, #80deea);
 }
 
 #root {
@@ -134,7 +134,7 @@ body {
   z-index: 1;
   max-width: 410px;
   border-radius: 10px;
-  background: linear-gradient(#352163, #33143c);
+  background: linear-gradient(#0288d1, #004d40);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -174,7 +174,7 @@ body {
   width: 20px;
   aspect-ratio: 1;
 }
-.no-results{
+.no-results {
   color: #fff;
   display: flex;
   min-height: 460px;
@@ -182,6 +182,7 @@ body {
   align-items: center;
   padding: 60px 40px 40px;
 }
-.no-results .title{
+.no-results .title {
   margin: 15px 0 15px;
 }
+
