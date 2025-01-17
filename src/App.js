@@ -9,6 +9,8 @@ import NoResultsDiv from "./components/NoResultsDiv";
 import { weatherCodes } from "./constants";
 
 const App = () => {
+  const API_KEY = process.env.REACT_APP_API_KEY;
+
   const [currentWeather, setCurrentWeather] = useState({});
   const [hourlyForecasts, setHourlyForecasts] = useState([]);
   const [hasNoResults, setHasNoResults] = useState(false);
@@ -53,7 +55,10 @@ const App = () => {
     }
   };
   useEffect(() => {
-
+    const defaultCity = "London";
+    const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${defaultCity}&days=2`;
+    getWeatherDetails(API_URL);
+ 
   }, []);
   return (
     <div className="container">
